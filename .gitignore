@@ -1,0 +1,14 @@
+# Node
+node_modules
+dist
+npm-debug.log
+package-lock.json
+tailwind.config.js
+# Env
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+.DS_Store
