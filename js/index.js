@@ -18,3 +18,14 @@ mongo.connect(process.env.DATABASEURL, { useNewUrlParser: true ,useUnifiedTopolo
 require('./middleware/App')(app)
 
 // Routers
+app.get('/', (req, res)=>{
+    res.render('index')
+})
+
+io.on('connection', (Socket) => {
+    Socket.on('chat message', (msg)=>{
+        io.emit('chat message', msg);
+    })
+})
+io.on('connection', (socket) => {
+   });
