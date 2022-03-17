@@ -2,9 +2,9 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 const User = require('../model/User');
 
-module.exports = (passport) => {
+module.exports = function(passport) {
     passport.use(
-        new LocalStrategy({ email: 'email' }, (email, password, done) => {
+        new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
         // Match user
         User.findOne({
             email: email
@@ -25,6 +25,7 @@ module.exports = (passport) => {
         });
     })
     );
+
     passport.serializeUser(function(user, done) {
         done(null, user.id);
     });

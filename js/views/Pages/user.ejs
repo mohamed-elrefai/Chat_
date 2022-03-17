@@ -1,0 +1,36 @@
+<div class="wapper">
+    <section class="user">
+        <header>
+            <div class="content">
+                <img src="<%= user.img %> " alt="">
+                <div class="details">
+                    <!--Username-->
+                    <span><%= user.fname %> <%= user.lname %> </span>
+                    <p>Open</p>
+                </div>
+            </div>
+            <a href="/logout" class="Logout">Logout</a>
+        </header>
+        <div class="search">
+            <span class="text">Select an user start chat</span>
+            <input type="text" name="search" placeholder="Enter name to search...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <% result.forEach(userFind =>{ %>
+            <% if(userFind.id != user.id){ %>
+                    <div class="user-list">
+                        <a href="/chat/<%= userFind.id %> ">
+                            <div class="content">
+                                <img src="<%= userFind.img %> ">
+                                    <div class="detail">
+                                        <span><%= userFind.fname%> <%= userFind.lname %> </span>
+                                        <p>😂😘</p>
+                                    </div>
+                            </div>
+                            <div class="status-dot offline"><i class="fas fa-circle"></i></div>
+                        </a>
+                    </div>
+                <% } %>  
+        <% }) %> 
+    </section>
+</div>

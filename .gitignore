@@ -4,6 +4,7 @@ dist
 npm-debug.log
 package-lock.json
 tailwind.config.js
+images
 # Env
 .env
 .env.local

@@ -2,22 +2,32 @@ const {Schema, model} = require('mongoose')
 
 const UserSchema = new Schema(
     {
-    username: {
+    fname: {
         type: String,
-        require: true,
-        min: 3,
-        max: 20,
-        unique: true,
+        required: true
     },
-    userPhone: {
+    lname: {
+        type: String,
+        required: true
+    },
+    email: {
         type: String,
         required: true,
-        max: 11,
-        unique: true,
+        unique: true
     },
-    profilePicture: {
+    password: {
+        type: String,
+        required: true,
+        min: 6,
+        max: 500
+    },
+    img: {
         type: String,
         default: "",
+    },
+    followings: {
+        type: Array,
+        default: [],
     },
 },{ timestamps: true });
 

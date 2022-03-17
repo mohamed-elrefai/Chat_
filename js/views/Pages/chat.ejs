@@ -1,4 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+<div class="wrapper">
+    <section class="chat">
+        <header>
+            <a href="#" class="back-icon"><i class="fas fa-arrow-left"></i></a>
+            <img src="">
+                <div class="detail">
+                    <span>kk</span>
+                    <p>open</p>
+                </div>
+        </header>
+        <div class="chat-box">
+            
+        </div>
+        <form action="/postChat" method="post" class="input-area" autocomplete="off">
+            <input type="text" class="input_ff" placeholder="Type a message here ..." name="message">
+            <input type="text" value="<%= user.id %> " name="incomming_id" hidden>
+            <button><i class="fab fa-telegram-plane"></i></button>
+        </form>
+    </section>
+</div>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 *{
 	margin: 0;
 	padding: 0;
@@ -331,3 +352,4 @@ form .name-detail .field:last-child{
 .user-list a .status-dot .offline{ /*offline status*/
 	color: #ccc;
 }
+</style>
