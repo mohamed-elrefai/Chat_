@@ -12,4 +12,13 @@ images
 .env.test.local
 .env.production.local
 
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
 .DS_Store

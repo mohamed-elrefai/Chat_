@@ -2,13 +2,19 @@ const {Schema, model} = require('mongoose')
 
 const msgSchema = new Schema(
     {
-    conversationId: {
-        type: String,
-    },
     sender: {
         type: String,
     },
-    text: {
+    memberFname:{
+        type: String,
+    },
+    memberLname:{
+        type: String,
+    }, 
+    memberImg:{
+        type: String,
+    },
+    message: {
         type: String,
     },
 },{ timestamps: true });

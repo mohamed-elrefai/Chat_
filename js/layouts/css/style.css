@@ -19,7 +19,7 @@ body{
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
-	background: #f7f7f7;
+	background: var(--Sec);
 }
 .wrapper{
 	background: #fff;
@@ -213,121 +213,66 @@ form .name-detail .field:last-child{
 
 /* --------------- *User Section* --------------- */
 
-.user{
-	padding: 25px 30px;
+.sidenav {
+	height: 100%;
+	width: 160px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	padding-top: 20px;
 }
-.user header ,
-.user-list a{
-	display: flex;
-	align-items: center;
-	padding-bottom: 20px;
-	justify-content: space-between;
-	border-bottom: 1px solid #e6e6e6; 
+
+.sidenav a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
 }
-.wrapper img{
-	object-fit: cover;
-	border-radius: 50%;
+
+.sidenav a:hover {
+	color: #f1f1f1;
 }
-:is(.user, .user-list ) .content{
-	display: flex; 
-	align-items: center;
+
+.main {
+	margin-left: 160px; /* Same as the width of the sidenav */
+	font-size: 28px; /* Increased text to enable scrolling */
+	padding: 0px 10px;
 }
-.user header .content img{
-	height: 70px;
-	width: 70px;
-	margin: 10px;
+.Chat-bar .Box-chat .main{
+	margin-left: 50px;
+	color: var(--Primary);
+}
+.Chat-bar .Box-chat .sidenav img{
+	width: 50%;
+	border-radius: 5px;
+	margin-left: 20px;
+}
+.Chat-bar .Box-chat .chat-send form{
+margin-top: 600px;
+}
+.Chat-bar .Box-chat .chat-send form button{
+	height: 43px;
+	color: var(--Sec);
+	background: var(--Primary);
+}
+.Chat-bar .Box-chat .chat-send form input{
+margin-left: 10px;
+width: 400px;
+}
+@media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+}
+
+.main img{
+	width: 50px;
 	border-radius: 5px;
 }
-:is(.user, .user-list ) .detail{
-	color: #000;
-	margin-left: 15px;
-}
-:is(.user, .user-list ) .detail span{
-	font-size: 18px;
-	font-weight: 500;
-}
-.user header .Logout{
-	color: #fff;
-	font-size: 17px;
-	padding: 7px 15px;
-	background: #333;
-	border-radius: 5px;
-	margin-left: 30px;
-}
-.user .search{
-	margin: 20px 0;
-	display: flex;
-	position: relative;
-	align-items: center;
-	justify-content: space-between;
-}
-.user .search .text{
-	font-size: 18px;
-}
-.user .search input{
-	position: absolute;
-	height: 42px;
-	width: calc(100% - 50px);
-	border: 1px solid #ccc;
-	padding: 0 13px;
-	font-size: 16px;
-	border-radius: 5px 0 0 5px;
-	outline: none;
-	opacity: 0;
-	pointer-events: none;
-	transition: all 0.3s ease;
-}
-.user .search input.active{
-	opacity: 1;
-	pointer-events: auto;
-}
-.user .search button{
-	width: 47px;
-	height: 42px;
-	border:none;
-	outline: none;
-	color: #333;
-	background: #fff;
-	cursor: pointer;
-	font-size: 17px;
-	border-radius: 0 5px 5px 0;
-	transition: all 0.2s ease;
-}
-.user .search button.active{
-	color: #fff;
-	background: #333;
-}
-.user .search button.active i::before{
-	content: "\f00d";
-}
-.user-list{
-	max-height: 350px;
-	overflow-y: auto;
-}
-:is(.user-list, .chat-box)::-webkit-scrollbar{
-	width: 0;
-}
-.user-list a{
-	margin-bottom: 15px;
-	page-break-after: 1;
-	padding-right: 15px;
-	border-bottom-color: #f1f1f1;
-}
-.user-list a:last-child{
-	border: none;
-	margin-bottom: 0px;
-}
-.user-list a .content img{
-	height: 40px;
-	width: 40px;
-} 
-.user-list a .content p{
-	color: #67676a;
-}
-.user-list a .status-dot{
-	font-size: 12px;
-	color: #468669;
-}
-.user-list a .status-dot .offline{ /*offline status*/
-	color: #ccc;
+.main p{
+	font-size:15px ;
+	margin-bottom: 10px;
 }

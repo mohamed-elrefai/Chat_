@@ -5,22 +5,27 @@ const router = require('express').Router(),
 
 // HomePage
 router.get('/',ensureAuthenticated, (req, res)=>{
-    User.find()
+    msg.find()
         .then(result => {
-            res.render('Pages/user',  {user: req.user, result})
+            res.render('Pages/chat',  {user: req.user, result})
         })
 })
-// Get chat page
-router.get('/chat/:id',ensureAuthenticated, (req, res)=>{
-    
-    res.render('Pages/chat',  {user: req.user})
-
-})
-
 
 router.post('/postChat', ensureAuthenticated, async (req, res)=>{
-    const incomming_id = req.body.incomming_id;
-    console.log(incomming_id)
+    const sender = req.body.sender;
+    const message = req.body.message;
+    const memberFname = req.body.sender_fname
+    const memberLname = req.body.sender_fname    
+    const memberImg = req.body.sender_img
+    
+    try{
+        const newMsg = await msg({sender,message, memberFname, memberFname, memberImg});
+        const saveMsg = await newMsg.save();
+        res.status(200).redirect('/')
+    }catch(err){
+        console.log(err);
+    }
+    console.log(sender)
 })
 
 module.exports = router
